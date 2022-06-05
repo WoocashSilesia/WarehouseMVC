@@ -18,7 +18,9 @@ namespace WarehouseMVC.Domain.Model
         public string ProducerCode { get; set; }
         [MaxLength(100)]
         public string Description { get; set; }
-        public virtual ICollection<Feature> ProductFeatures { get; set; }
+        public int ProductId { get; set; }
+        public virtual ICollection<Feature> Features { get; set; }
         //public virtual ICollection<ProductDimension> ProductDimensions { get; set; }
+        public Product Product { get; set; }
     }
 }

@@ -11,5 +11,6 @@ namespace WarehouseMVC.Domain.Model
         public int? ParentId { get; set; }
         public virtual ProductGroup Parent { get; set; }
         public virtual ICollection<ProductGroup> Children { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

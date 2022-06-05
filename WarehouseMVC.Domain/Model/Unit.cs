@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using WarehouseMVC.Domain.Common;
 
 namespace WarehouseMVC.Domain.Model
@@ -10,5 +11,6 @@ namespace WarehouseMVC.Domain.Model
         [MaxLength(20)]
         public string Shortcut { get; set; }
         public bool Indivisible { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

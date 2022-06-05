@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using WarehouseMVC.Domain.Common;
 
 namespace WarehouseMVC.Domain.Model
@@ -14,7 +13,7 @@ namespace WarehouseMVC.Domain.Model
         public string Format { get; set; }
         public int UserId { get; set; }
         public virtual User User { get; set; }
-
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual int ProductId { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

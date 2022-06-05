@@ -9,9 +9,8 @@ namespace WarehouseMVC.Domain.Model
         public string Name { get; set; }
         [MaxLength(100)]
         public string Description { get; set; }
-        public int FeatureValueId { get; set; }
+        public FeatureValue FeatureValue { get; set; }
         public int ProductDetailsId { get; set; }
-        public virtual FeatureValue FeatureValue { get; set; }
         public virtual ProductDetails ProductDetails { get; set; }
     }
 }

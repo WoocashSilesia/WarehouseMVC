@@ -6,7 +6,6 @@ namespace WarehouseMVC.Domain.Model
 {
     public class FeatureValue : BaseEntity
     {
-        public int FeatureTypeId { get; set; }
         public double? DoubleFrom { get; set; }
         public double? DoubleTo { get; set; }
         public int? IntFrom { get; set; }
@@ -16,6 +15,9 @@ namespace WarehouseMVC.Domain.Model
         public bool? BoolValue { get; set; }
         [MaxLength(100)]
         public string StringValue { get; set; }
-        public virtual FeatureType FeatureType { get; set; }
+        public int FeatureTypeId { get; set; }
+        public FeatureType FeatureType { get; set; }
+        public int FeatureId { get; set; }
+        public Feature Feature { get; set; }
     }
 }
