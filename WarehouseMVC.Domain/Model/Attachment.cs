@@ -11,8 +11,6 @@ namespace WarehouseMVC.Domain.Model
         public string Description { get; set; }
         [MaxLength(20)]
         public string Format { get; set; }
-        public int UserId { get; set; }
-        public virtual User User { get; set; }
         public virtual int ProductId { get; set; }
         public virtual Product Product { get; set; }
     }

@@ -16,7 +16,6 @@ namespace WarehouseMVC.Infrastructure
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<ProductTypeOfCollection> ProductTypeOfCollections { get; set; }
         public DbSet<Unit> Units { get; set; }
-        public DbSet<User> Users { get; set; }
 
         public Context(DbContextOptions options): base(options)
         {

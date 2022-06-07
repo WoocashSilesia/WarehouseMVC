@@ -8,7 +8,6 @@ namespace WarehouseMVC.Application.Interfaces
 {
     public interface IProductService
     {
-        List<int> GetAllProducts();
 
     }
 }
