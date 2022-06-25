@@ -1,26 +1,19 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using WarehouseMVC.Domain.Common;
 
 namespace WarehouseMVC.Domain.Model
 {
     public class ProductDetails : BaseEntity
     {
-        [MaxLength(100)]
         public string ExtraName { get; set; }
-        [MaxLength(100)]
         public string Supplier { get; set; }
-        [MaxLength(100)]
         public string EAN { get; set; }
-        public decimal Price { get; set; }
-        public bool Active { get; set; }
-        [MaxLength(100)]
+        public decimal? Price { get; set; }
         public string ProducerCode { get; set; }
-        [MaxLength(100)]
         public string Description { get; set; }
         public int ProductId { get; set; }
-        public virtual ICollection<Feature> Features { get; set; }
-        //public virtual ICollection<ProductDimension> ProductDimensions { get; set; }
         public Product Product { get; set; }
+        public  ICollection<Feature> Features { get; set; }
+        //public ICollection<ProductDimension> ProductDimensions { get; set; }
     }
 }

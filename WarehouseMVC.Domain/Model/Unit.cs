@@ -6,11 +6,9 @@ namespace WarehouseMVC.Domain.Model
 {
     public class Unit : BaseEntity
     {
-        [MaxLength(100)]
         public string Name { get; set; }
-        [MaxLength(20)]
         public string Shortcut { get; set; }
         public bool Indivisible { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

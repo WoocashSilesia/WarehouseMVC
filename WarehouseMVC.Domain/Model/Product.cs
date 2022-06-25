@@ -6,20 +6,18 @@ namespace WarehouseMVC.Domain.Model
 {
     public class Product : BaseEntity
     { 
-        [MaxLength(100)]
         public string Name { get; set; }
-        [MaxLength(100)]
         public string ProductCode { get; set; }
         public bool Active { get; set; }
         public int ProductTypeId { get; set; }
-        public virtual ProductType ProductType { get; set; }
+        public ProductType ProductType { get; set; }
         public int ProductTypeOfCollectionId { get; set; }
-        public virtual ProductTypeOfCollection ProductTypeOfCollection { get; set; }    
-        public int ProductGroupId { get; set; }
-        public virtual ProductGroup ProductGroup { get; set; }
+        public ProductTypeOfCollection ProductTypeOfCollection { get; set; }    
+        public int? ProductGroupId { get; set; }
+        public ProductGroup ProductGroup { get; set; }
         public int UnitId { get; set; }
-        public virtual  Unit Unit { get; set; }
+        public  Unit Unit { get; set; }
         public ProductDetails ProductDetails { get; set; }
-        public virtual ICollection<Attachment> Attachments { get; set; }
+        public ICollection<Attachment> Attachments { get; set; }
     }
 }

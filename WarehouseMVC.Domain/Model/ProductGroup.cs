@@ -6,11 +6,10 @@ namespace WarehouseMVC.Domain.Model
 {
     public class ProductGroup : BaseEntity
     {
-        [MaxLength(100)]
         public string Name { get; set; }
         public int? ParentId { get; set; }
-        public virtual ProductGroup Parent { get; set; }
-        public virtual ICollection<ProductGroup> Children { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public ProductGroup Parent { get; set; }
+        public ICollection<ProductGroup> Children { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

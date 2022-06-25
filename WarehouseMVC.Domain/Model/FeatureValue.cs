@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using WarehouseMVC.Domain.Common;
 
 namespace WarehouseMVC.Domain.Model
@@ -13,7 +12,6 @@ namespace WarehouseMVC.Domain.Model
         public DateTime? DateTimeFrom { get; set; }
         public DateTime? DateTimeTo { get; set; }
         public bool? BoolValue { get; set; }
-        [MaxLength(100)]
         public string StringValue { get; set; }
         public int FeatureTypeId { get; set; }
         public FeatureType FeatureType { get; set; }

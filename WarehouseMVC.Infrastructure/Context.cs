@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using WarehouseMVC.Domain.Model;
 
 namespace WarehouseMVC.Infrastructure
@@ -24,19 +25,9 @@ namespace WarehouseMVC.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
             base.OnModelCreating(builder);
-
-            builder.Entity<Feature>()
-                .HasOne(f => f.FeatureValue).WithOne(fv => fv.Feature)
-                .HasForeignKey<FeatureValue>(fv => fv.FeatureId);
-
-            builder.Entity<FeatureType>()
-                .HasOne(ft => ft.FeatureValue).WithOne(fv => fv.FeatureType)
-                .HasForeignKey<FeatureValue>(fv => fv.FeatureTypeId);
-
-            builder.Entity<Product>()
-                .HasOne(p => p.ProductDetails).WithOne(pd => pd.Product)
-                .HasForeignKey<ProductDetails>(p => p.ProductId);
         }
     }
 }
