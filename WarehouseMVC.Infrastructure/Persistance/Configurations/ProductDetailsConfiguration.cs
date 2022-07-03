@@ -9,28 +9,32 @@ namespace WarehouseMVC.Infrastructure.Persistance.Configurations
         public void Configure(EntityTypeBuilder<ProductDetails> builder)
         {
             builder
-                .Property(a => a.ExtraName)
+                .Property(pd => pd.ExtraName)
                 .HasMaxLength(100);
 
             builder
-                .Property(a => a.Supplier)
+                .Property(pd => pd.Supplier)
                 .HasMaxLength(100);
 
             builder
-                .Property(a => a.EAN)
+                .Property(pd => pd.EAN)
                 .HasMaxLength(100);
 
             builder
-                .Property(a => a.ProducerCode)
+                .Property(pd => pd.ProducerCode)
                 .HasMaxLength(100);
 
             builder
-                .Property(a => a.Description)
+                .Property(pd => pd.Description)
                 .HasMaxLength(100);
 
             builder
-                .Property(a => a.ProductId)
+                .Property(pd => pd.ProductId)
                 .IsRequired();
+
+            builder
+                .Property(pd => pd.Price)
+                .HasPrecision(18, 2);
         }
     }
 }

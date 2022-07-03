@@ -15,9 +15,10 @@ namespace WarehouseMVC.Infrastructure.Repositories
         public void DeleteProduct(int productId)
         {
             var product = _context.Products.Find(productId);
-            if(product != null)
+            if (product != null)
             {
-                _context.Products.Remove(product);
+                product.Active = false;
+                _context.Products.Update(product);
                 _context.SaveChanges();
             }
         }
@@ -29,14 +30,21 @@ namespace WarehouseMVC.Infrastructure.Repositories
             return product.Id;
         }
 
-        public IQueryable<Product> GetProductsByType(int typeId)
+        public int EditProduct(Product product)
         {
-            return _context.Products.Where(p => p.ProductTypeId == typeId);
+            _context.Products.Update(product);
+            _context.SaveChanges();
+            return product.Id;
         }
 
         public Product GetProductById(int id)
         {
             return _context.Products.FirstOrDefault(x => x.Id == id);
+        }
+
+        public IQueryable<Product> GetAllActiveProducts()
+        {
+            return _context.Products.AsQueryable();
         }
     }
 }

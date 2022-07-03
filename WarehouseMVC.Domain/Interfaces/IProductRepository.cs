@@ -7,7 +7,8 @@ namespace WarehouseMVC.Domain.Interfaces
     {
         void DeleteProduct(int productId);
         int AddProduct(Product product);
-        IQueryable<Product> GetProductsByType(int typeId);
+        int EditProduct(Product product);
+        IQueryable<Product> GetAllActiveProducts();
         Product GetProductById(int id);
     }
 }

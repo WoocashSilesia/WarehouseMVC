@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Build.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WarehouseMVC.Application.Interfaces;
+using WarehouseMVC.Application.ViewModels.Product;
 
 namespace WarehouseMVC.Web.Controllers
 {
@@ -20,7 +16,8 @@ namespace WarehouseMVC.Web.Controllers
         [HttpGet]
         public IActionResult GetAllProducts()
         {
-            return View();
+            var modelVm = _productService.GetAllProductsForList();
+            return View(modelVm);
         }
 
         [HttpGet("{id}")]
@@ -30,14 +27,23 @@ namespace WarehouseMVC.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateProduct()
+        public IActionResult CreateProduct(ProductAddRequestVm model)
         {
-            return View();
+            var id = _productService.AddProduct(model);
+            return View(id);
         }
 
         [HttpPut]
-        public IActionResult UpdateProduct()
+        public IActionResult UpdateProduct(ProductEditRequestVm model)
         {
+            var id = _productService.EditProduct(model);
+            return View(id);
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteProduct(int id)
+        {
+            _productService.DeleteProduct(id);
             return View();
         }
     }

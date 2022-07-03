@@ -8,7 +8,7 @@ namespace WarehouseMVC.Domain.Model
         public string ExtraName { get; set; }
         public string Supplier { get; set; }
         public string EAN { get; set; }
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
         public string ProducerCode { get; set; }
         public string Description { get; set; }
         public int ProductId { get; set; }
